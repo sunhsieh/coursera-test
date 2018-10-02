@@ -1,16 +1,29 @@
 (function(){
 'use strict';
 
-  angular.module('MyApp', [])
+  angular.module('LunchCheck', [])
 
-  .controller('MyController', MsgController);
-  MsgController.$inject = ['$scope'];
-  function MsgController($scope){
+  .controller('LunchCheckController', LunchCheckController);
+  LunchCheckController.$inject = ['$scope'];
+  function LunchCheckController($scope){
+    //$scope.comment = "";
 
-    $scope.myMsg = 'HiHi';
+    $scope.PerformCheck = function(){
 
-    $scope.changeMsg = function(){
-      $scope.myMsg = 'Bye';
+      if (!$scope.inputString){
+        $scope.comment = "Please enter data first";
+        $scope.commentColor = "#F00";
+      } else {
+        var lunchItems = $scope.inputString.split(",")
+        if (lunchItems.length <= 3){
+          $scope.comment = "Enjoy!";
+        } else {
+          $scope.comment = "Too much!";
+        }
+        $scope.commentColor = "#090";
+      }
+
+
     }
 
   }

@@ -1,6 +1,6 @@
 <!Doctype html>
 
-<html ng-app="MyApp">
+<html ng-app="LunchCheck">
 <head>
   <meta charset="utf-8">
   <script src="angular.min.js"></script>
@@ -9,10 +9,16 @@
 
 </head>
 <body>
-  <div ng-controller="MyController">
-    Message is: {{myMsg}}
-    <br>
-    <button ng-click="changeMsg()">ChangeMsg</button>
+  <div ng-controller="LunchCheckController">
+    <h2> What do you usually eat for lunch? </h2>
+    <br />
+    <input ng-model='inputString'
+      style="width: 95%; padding: 5px; border-color: {{commentColor}}"
+      placeholder="list you lunch separated with comma"></input>
+    <P>
+      <button ng-click='PerformCheck()'>Check If Too Much</button>
+    </p>
+    <p style="color: {{commentColor}}"> {{comment}} </p>
   </div>
 </body>
 </html>
