@@ -1,0 +1,11 @@
+<div style="clear:left">
+  <table>
+    <tr ng-repeat="item in foundItems" style="padding:3px">
+      <td><button ng-click="onRemove({index: $index});" class="remove-button">remove Item</button></td>
+      <td>{{item.short_name}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+    </tr>
+  </table>
+</div>
+<div class="error">{{message}}</div>
