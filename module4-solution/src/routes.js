@@ -20,25 +20,25 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Premade list page
-  .state('categoryView', {
-    url: '/category',
-    templateUrl: 'src/menuapp/templates/main-categorylist.template.html',
-    controller: 'MainCategoryListController as categoryList',
+  .state('categories', {
+    url: '/categories',
+    templateUrl: 'src/menuapp/templates/main-categories.template.html',
+    controller: 'MainCategoriesController as categoriesList',
     resolve: {
-      categories: ['DataService', function(DataService){
-        return DataService.getItems();
+      items: ['MenuDataService', function(MenuDataService){
+        return MenuDataService.getAllCategories();
       }]
     }
   })
 
   // Item View depends on the category short_name clicked
-  .state('itemView', {
-    url: '/category/{categoryShortName}',
-    templateUrl: 'src/menuapp/templates/main-dishlist.template.html',
-    controller: 'MainDishListController as dishlist',
+  .state('items', {
+    url: '/categories/{categoryShortName}',
+    templateUrl: 'src/menuapp/templates/main-items.template.html',
+    controller: 'MainItemsController as itemsList',
     resolve: {
-      dishes: ['$stateParams','DataService', function($stateParams,DataService){
-        return DataService.getItemsForCategory($stateParams.categoryShortName);
+      items: ['$stateParams','MenuDataService', function($stateParams,MenuDataService){
+        return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
       }]
     }
   })

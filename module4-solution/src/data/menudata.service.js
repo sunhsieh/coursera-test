@@ -2,15 +2,15 @@
 'use strict';
 
 angular.module('data')
-.service('DataService', DataService);
+.service('MenuDataService', MenuDataService);
 
 
-DataService.$inject = ['$http'];
-function DataService($http) {
+MenuDataService.$inject = ['$http'];
+function MenuDataService($http) {
   var service = this;
 
 
-    service.getItems = function(){
+    service.getAllCategories = function(){
 
       var promise = $http( {
         method: 'GET',
