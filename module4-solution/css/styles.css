@@ -1,19 +1,19 @@
+
+
 body {
   font-size: 1.2em;
+  margin: 10px 30px 10px 30px;
 }
 
-.error {
-  color: red;
+.logo {
+  padding-bottom: 20px;
+
+  font-size: xx-large;
   font-weight: bold;
-  display: none;
 }
 
-.loading-icon {
-  position: absolute;
-  left: 50%;
-  top: 10px;
-}
-
-.active {
-  font-weight: bold;
+.entry{
+  text-align: center;
+  border: thin;
+  margin-top:100px;
 }

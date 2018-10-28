@@ -6,7 +6,7 @@
     <title>Menu App</title>
   </head>
   <body>
-    <h1>Welcome to Menu App</h1>
+    <div class="logo">Menu App</div>
 
     <ui-view></ui-view>
 
@@ -15,18 +15,18 @@
     <script src="lib/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
-    <script src="src/categorylist/categorylist.module.js"></script>
+    <script src="src/menuapp/menuapp.module.js"></script>
     <script src="src/data/data.module.js"></script>
 
     <!-- Routes -->
     <script src="src/routes.js"></script>
 
     <!-- 'categorylist' module artifacts -->
-    <script src="src/categorylist/categorylist.component.js"></script>
-    <script src="src/categorylist/main-categorylist.controller.js"></script>
+    <script src="src/menuapp/categorylist.component.js"></script>
+    <script src="src/menuapp/main-categorylist.controller.js"></script>
 
-    <script src="src/itemlist/itemlist.component.js"></script>
-    <script src="src/itemlist/main-itemlist.controller.js"></script>
+    <script src="src/menuapp/dishlist.component.js"></script>
+    <script src="src/menuapp/main-dishlist.controller.js"></script>
 
     <script src="src/data/data.service.js"></script>
 

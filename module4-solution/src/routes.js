@@ -16,13 +16,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/categorylist/templates/home.template.html'
+    templateUrl: 'src/menuapp/templates/home.template.html'
   })
 
   // Premade list page
   .state('categoryView', {
     url: '/category',
-    templateUrl: 'src/categorylist/templates/main-categorylist.template.html',
+    templateUrl: 'src/menuapp/templates/main-categorylist.template.html',
     controller: 'MainCategoryListController as categoryList',
     resolve: {
       categories: ['DataService', function(DataService){
@@ -34,8 +34,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Item View depends on the category short_name clicked
   .state('itemView', {
     url: '/category/{categoryShortName}',
-    templateUrl: 'src/itemlist/templates/main-itemlist.template.html',
-    controller: 'MainItemListController as itemList',
+    templateUrl: 'src/menuapp/templates/main-dishlist.template.html',
+    controller: 'MainDishListController as dishlist',
     resolve: {
       dishes: ['$stateParams','DataService', function($stateParams,DataService){
         return DataService.getItemsForCategory($stateParams.categoryShortName);
