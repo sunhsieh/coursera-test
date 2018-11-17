@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h1>Sign Up for the newsletter</h1>
+  <form name="regForm" id="regForm" novalidate>
+
+    <input type="text" name="firstName" placeholder="First Name" ng-model="regCtrl.user.firstName" required>
+    <span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">required Field</span><br>
+
+    <input type="text" name="lastName" placeholder="Last Name" ng-model="regCtrl.user.lastName" required>
+    <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">required Field</span><br>
+
+    <input type="email" name="email" placeholder="Email" ng-model="regCtrl.user.email" required>
+    <span ng-if="regForm.email.$invalid && regForm.email.$touched">required Field</span><br>
+
+    <input type="text" name="phone" placeholder="Phone Number" ng-model="regCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+    <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone number should be in format of ###-###-####</span><br>
+
+    <input type="text" name="favDish" placeholder="Favourite Dish" ng-model="regCtrl.user.favDish" required>
+    <span ng-if="regForm.favDish.$error.required && regForm.$submitted">required Field</span>
+    <span ng-if="!regCtrl.dishExist && regCtrl.checked">Dish Name Incorrect, try again</span><br>
+
+    <button ng-disabled="regForm.$invalid" name="register"
+            ng-click="regCtrl.register()">submit / Update</button>
+
+    <div ng-if="regForm.$submitted && regCtrl.registered">Your information has been saved</div>
+
+  </form>
+</div>
