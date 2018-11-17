@@ -1,8 +1,10 @@
 #regForm {
   color: black;
-
 }
 
+#regForm span{
+  color: white;
+}
 #regForm input, button{
   margin: 2px;
   width: 300px;
