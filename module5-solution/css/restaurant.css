@@ -1,8 +1,5 @@
-#regForm input {
-  color: black;
-}
-
 #regForm input, button{
+  color: black;
   margin: 2px;
   width: 300px;
 }
